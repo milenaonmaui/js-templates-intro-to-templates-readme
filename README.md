@@ -104,7 +104,7 @@ That works, but it was kind of a lot to manually keep track of all the HTML *mar
 
 ### Creating a Template
 
-Beyond the obvious reasons of "this is ugly and hard to type", if we keep putting comments in this way, manually putting in the HTML with every new string, we're bound to mess it up eventually. What we need is a way to reliably reproduce the structure, and give it the data and allow it to build the comment for us.
+Beyond the obvious reasons of "this is ugly and hard to type," if we keep putting comments in this way, manually putting in the HTML with every new string, we're bound to mess it up eventually. What we need is a way to reliably reproduce the structure, and give it the data and allow it to build the comment for us.
 
 What we are trying to do is create a *template* for comments that we can reuse for every new comment. A template defines the HTML and provides places to insert data dynamically.
 
@@ -165,7 +165,7 @@ We also now have the ability to modify the structure of the HTML we use for comm
 
 We have just created a *template* for comments with these functions. It's not the friendliest-looking set of functions, but it does everything a template should do: it defines the structure of the markup, it takes discrete data elements and plugs them into the markup, and it takes the resulting markup and data and inserts it into the DOM.
 
-We broke each function up along the lines of each section of the DOM we wish to manipulate, affording us the ability to more easily manage the structure of our comments in a more modular and composable way, rather than trying to do everything in one function which isn't that much of an improvement over just typing all the markup into a string.
+We broke up each function to align with each section of the DOM we wish to manipulate, affording us the ability to more easily manage the structure of our comments in a more modular and composable way. This is better than trying to do everything in one function, which isn't that much of an improvement over just typing all the markup into a string.
 
 Templates are all about being able to dynamically modify the DOM in repeatable, composable chunks that are easy to manage, maintain, and change.
 
@@ -187,7 +187,7 @@ In the `index.html`, we will get rid of our "Add Comment" link and create a form
 </div>
 ```
 
-And augment our `addComment` function to take the values from the form. We shouldn't need to change any other JavaScript code if we set up our template functions correctly.
+And let's augment our `addComment` function to take the values from the form. We shouldn't need to change any other JavaScript code if we set up our template functions correctly.
 
 ```js
 function addComment() {
@@ -201,7 +201,7 @@ function addComment() {
 }
 ```
 
-We added a line to the top of this function `event.preventDefault()`. We'll explain more about `event`s later, but for now all you need to know is that this line prevent the default action of a form, which would be submitting and reloading the page. Since we don't want to reload the page and we're writing some JavaScript to take care of the form submission, we prevent the default action.
+We added a line to the top of this function `event.preventDefault()`. We'll explain more about `event`s later, but for now all you need to know is that this line prevents the default action of a form, which would be submitting and reloading the page. Since we don't want to reload the page and we're writing some JavaScript to take care of the form submission, we prevent the default action.
 
 Let's reload `index.html` and try out our new comment form. If we did everything right, we should now be able to dynamically add comments to this blog post, and we all know the internet needed one more place where people can add comments.
 
